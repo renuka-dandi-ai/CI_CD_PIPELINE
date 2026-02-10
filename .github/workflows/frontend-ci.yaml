@@ -1,0 +1,32 @@
+name: Frontend CI - Streamlit
+
+on:
+  push:
+    branches: [main]
+    paths:
+       - "Frontend/**"
+
+jobs:
+   Frontend-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: set up Python
+      uses: actions/setup-python@v5
+      with:
+          python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+       cd Frontend
+       pip install -r requirements.txt
+       pip install --upgrade pip
+    - name: Streamlit import check
+      run: |
+       cd Frontend
+       python -c "import streamlit"
+       python -c "import streamlit_app"
+     
