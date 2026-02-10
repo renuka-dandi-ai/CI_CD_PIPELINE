@@ -29,11 +29,11 @@ jobs:
           python -m pip install pytest httpx
           python -m pytest tests/
           
-   deploy:
-      needs: test
-      runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/main'
-      steps:
-        - name: Trigger Render Deploy 
-          run: |
-           curl -X POST -H "Accept: ${{ secrets.RENDER_DEPLOY_HOOK }}"
+  #  deploy:
+  #     needs: test
+  #     runs-on: ubuntu-latest
+  #     if: github.ref == 'refs/heads/main'
+  #     steps:
+  #       - name: Trigger Render Deploy 
+  #         run: |
+  #          curl -X POST -H "Accept: ${{ secrets.RENDER_DEPLOY_HOOK }}"
