@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 #fastAPI endpoint
-API_URL="https://ci-cd-pipeline-1jbl.onrender.com/predict"
+API_URL="https://ci-cd-pipeline-1jbl.onrender.com"
 
 st.set_page_config(
     page_title="House Price Prediction",
